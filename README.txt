@@ -11,6 +11,7 @@ PREPARATION:
 - general:
 1.) You need to get the list of reporting words compiled by Annelen Brunner and put it into the directory "data/stw_words". You can find this list in the additional material to her dissertation: https://repos.ids-mannheim.de/tou.html (tools/rule_based_tools/MarkSTWWords/stw_words/stw_words.xls)
 2.) You need to download the RFTagger and put it into the directory "RFTagger" (directories in this folder should be bin/cmd/doc etc.): http://www.cis.uni-muenchen.de/∼schmid/tools/RFTagger/
+3.) You need to get a German word vector model and put it into "data/word_vecs". Either download the model provided by Andreas Müller as part of his Bachelor Thesis (https://devmount.github.io/GermanWordEmbeddings/) or train your own model on the Kolimo corpus (https://kolimo.uni-goettingen.de/about.html). You can use the toolkit provided by Andreas Müller to do this with additional preprocessing you can find in the file preprocessing.py (normalize_kolimo).
 3.) OPTIONAL: If you want to use the full candidate speaker features, you need to get a list of possible synonyms for the word "Person", e.g. by extracting the hyponyms from Germanet and put these word (one per line) into the empty text file "data/person.txt"
 
 - for training:
