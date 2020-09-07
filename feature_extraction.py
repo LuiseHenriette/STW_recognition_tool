@@ -380,7 +380,7 @@ class STWRFeatureExtractor(object):
 
         # --- Possible speaker features ---
         # Is subject a pronoun, a person NE or a "Person" head noun -> possible speaker
-        cand_speakers = [tokens[i] for i,tag in enumerate(tags) if (tag in['PPER', 'PIS', 'PDS'] or (tag in ['NE', 'NNE'] and 'PER' in [ent for ent in doc.ents if tokens[i].idx >= ent.start and tokens[i].idx <= ent.end]))]
+        cand_speakers = [tokens[i] for i,tag in enumerate(tags) if (tag in['PPER', 'PIS', 'PDS'] or (tag in ['NE', 'NNE'] and 'PER' in [ent.label_ for ent in doc.ents if tokens[i].idx >= ent.start and tokens[i].idx <= ent.end]))]
 
         # Check whether any noun phrase has a head that is a synset of "Person" in Germanet
         person = []
