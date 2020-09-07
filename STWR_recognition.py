@@ -21,6 +21,7 @@ import os
 import re
 import sys
 import warnings
+import csv
 
 from imblearn.over_sampling import RandomOverSampler, SMOTE
 from germalemma import GermaLemma
@@ -595,7 +596,7 @@ class STWRecognizer():
         if verbose:
             print(output)
         # Save annotated text in file
-        output.to_csv(path_or_buf="{}.tsv".format(filename_output), sep='\t', index=False)
+        output.to_csv(path_or_buf="{}.tsv".format(filename_output), sep='\t', index=False, quoting=csv.QUOTE_NONE)
 
         # Produce the html file
         if html:
